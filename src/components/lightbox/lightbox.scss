@@ -1,0 +1,147 @@
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  background-color: rgba(#FFF, 0.9);
+}
+
+.lightbox-image {
+  position: fixed;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: url("cross.svg") transparent no-repeat;
+  background-size: 50px 50px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.lightbox-btn {
+  position: fixed;
+  top: 50%;
+  width: 50px;
+  height: 90px;
+  margin-top: -40px;
+  background-color: transparent;
+  background-size: 50px 90px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.lightbox-btn:hover, .lightbox-close:hover {
+  transform: scale(1.2);
+}
+
+.lightbox-prev {
+  left:20px;
+  background-image: url("prev.png");
+}
+
+.lightbox-next {
+  right:20px;
+  background-image: url("next.png");
+}
+
+.lightbox-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  margin-left: -20px;
+  margin-top: -20px;
+  background-color: #444;
+  background-color: rgba(#000, 0.5);
+  border-radius: 40px;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    animation: lightbox-loading .5s ease infinite;
+  }
+}
+
+@keyframes lightbox-loading {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.75);
+  }
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(0.75);
+  }
+}
+
+
+.lightbox-fade-enter-active, .lightbox-fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.lightbox-fade-enter, .lightbox-fade-leave-active {
+  opacity: 0;
+}
+
+
+.lightbox-prev-enter-active, .lightbox-prev-leave-active {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.lightboxprevt-enter-active {
+  transition-delay: 0.3s;
+}
+
+.lightbox-prev-enter {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.lightbox-prev-leave-active {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+
+.lightbox-next-enter-active, .lightbox-next-leave-active {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.lightbox-next-enter-active {
+  transition-delay: 0.3s;
+}
+
+.lightbox-next-enter {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.lightbox-next-leave-active {
+  opacity: 0;
+  transform: translateX(-100px);
+}
